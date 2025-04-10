@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Application Sécurisée</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-container" class="login-container">
+    <h2>STPA</h2>
+    <h3>La Société Tunisienne de Production Alimentaire</h3>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit">Se connecter</button>
+      <div id="error-message" class="error-message"></div>
+    </form>
+  </div>
+
+  <div id="main-content" style="display: none">
+    <div class="container">
+      <h2>STPA - Gestion des Commandes</h2>
+
+      <table id="dynamic-table">
+        <thead>
+          <tr>
+            <th></th> <!-- Colonne vide à la place de "Catégorie" -->
+            <th>Nom du Transporteur</th>
+            <th>Choix de Farine</th>
+            <th>Quantité Farine</th>
+            <th>Choix de Semoule</th>
+            <th>Quantité Semoule</th>
+            <th>Destination</th>
+            <th>Ordre</th>
+            <th>N° Voyage</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Lignes générées dynamiquement par catégorie -->
+        </tbody>
+      </table>
+
+      <!-- Emplacements pour chaque bouton sous chaque bloc de catégorie -->
+      <div id="btn-boulangerie" style="margin: 10px 0;"></div>
+      <div id="btn-pointchaud" style="margin: 10px 0;"></div>
+      <div id="btn-grossiste" style="margin: 10px 0;"></div>
+
+      <div class="chat-container">
+        <h3>Chat</h3>
+        <div class="chat-box" id="chat-box"></div>
+        <textarea id="chat-input" placeholder="Entrez votre message..."></textarea>
+        <button onclick="sendMessage()">Envoyer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
